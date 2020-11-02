@@ -1,0 +1,15 @@
+body {
+    padding-top: 50px;
+}
+
+.controls {
+    padding: 40px 15px;
+    text-align: center;
+}
+
+.thumbnail {
+    text-align: center;
+    padding: 1em;
+    margin-left: auto;
+    margin-right: auto;
+}
