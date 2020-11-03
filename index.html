@@ -1,24 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
 
-<head>
+<html lang="en"><head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    
     <title>Home Automation System</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/home-automation.css" rel="stylesheet">
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-</head>
+    
+<link rel="stylesheet" type="text/css" href="modules/light-control/styles.css"><link rel="stylesheet" type="text/css" href="modules/thermostat/styles.css"></head>
 
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -44,7 +37,81 @@
             <div id="grid-container" class="container">
                 <div class="row">
 
-                </div>
+                <div class="col-xs-18 col-sm-6 col-md-3"><div id="light-control-living-room-ceiling-fan" class="thumbnail light-control">
+    <div>
+        <img src="images/light-bulb-small.png" class="img-rounded img-light-control">
+        
+        <img src="images/fan-small.png" class="img-rounded img-light-control">
+        
+    </div>
+    <h4>Living Room Ceiling Fan</h4>
+    <h5>Light</h5>
+    <div class="btn-group" role="group" data-toggle="buttons" aria-label="Light switch">
+        <label class="btn btn-primary">
+            <input type="radio" name="light-switch-living-room-ceiling-fan" value="on">On
+        </label>
+        <label class="btn btn-primary active">
+            <input type="radio" name="light-switch-living-room-ceiling-fan" value="off">Off
+        </label>
+    </div>
+    
+</div>
+<script>
+    new Home.LightAndFanControl({id: "living-room-ceiling-fan", module: "light-control"}).init();
+</script></div><div class="col-xs-18 col-sm-6 col-md-3"><div id="light-control-bedroom-light" class="thumbnail light-control">
+    <div>
+        <img src="images/light-bulb-small.png" class="img-rounded img-light-control">
+        
+    </div>
+    <h4>Bedroom Light</h4>
+    <h5>Light</h5>
+    <div class="btn-group" role="group" data-toggle="buttons" aria-label="Light switch">
+        <label class="btn btn-primary active">
+            <input type="radio" name="light-switch-bedroom-light" value="on">On
+        </label>
+        <label class="btn btn-primary">
+            <input type="radio" name="light-switch-bedroom-light" value="off">Off
+        </label>
+    </div>
+    
+</div>
+<script>
+    new Home.LightAndFanControl({id: "bedroom-light", module: "light-control"}).init();
+</script></div><div class="col-xs-18 col-sm-6 col-md-3"><div id="light-control-office-light" class="thumbnail light-control">
+    <div>
+        <img src="images/light-bulb-small.png" class="img-rounded img-light-control">
+        
+    </div>
+    <h4>Office Light</h4>
+    <h5>Light</h5>
+    <div class="btn-group" role="group" data-toggle="buttons" aria-label="Light switch">
+        <label class="btn btn-primary">
+            <input type="radio" name="light-switch-office-light" value="on">On
+        </label>
+        <label class="btn btn-primary active">
+            <input type="radio" name="light-switch-office-light" value="off">Off
+        </label>
+    </div>
+    
+</div>
+<script>
+    new Home.LightAndFanControl({id: "office-light", module: "light-control"}).init();
+</script></div><div class="col-xs-18 col-sm-6 col-md-3">  
+    <div class="btn-group" role="group" data-toggle="buttons" aria-label="Selection of heating, cooling or off status">
+        <label class="btn btn-primary">
+            <input type="radio" name="hvac-options-central-hvac" value="heat">Heat
+        </label>
+        <label class="btn btn-primary active">
+            <input type="radio" name="hvac-options-central-hvac" value="cool">Cool
+        </label>
+        <label class="btn btn-primary">
+            <input type="radio" name="hvac-options-central-hvac" value="off">Off
+        </label>
+    </div>
+</div>
+<script>
+    new Home.Thermostat({id: "central-hvac", module: "thermostat"}).init();
+</script></div></div>
                 <!--/row-->
             </div>
             <!--/grid-container -->
@@ -62,6 +129,6 @@
     <script src="js/underscore-min.js"></script>
     <script src="js/util.js"></script>
     <script src="js/home-automation.js"></script>
+    
 </body>
-
 </html>
